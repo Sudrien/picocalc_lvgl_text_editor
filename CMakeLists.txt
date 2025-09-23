@@ -8,7 +8,7 @@ set(PICO_BOARD pico2)
 
 include(pico_sdk_import.cmake)
 
-project(pico_lvgl_display_demo)
+project(picocalc_lvgl_text_editor)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
@@ -25,21 +25,21 @@ add_subdirectory(lcdspi)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/lib/lvgl lvgl)
 
 
-add_executable(pico_lvgl_display_demo
+add_executable(picocalc_lvgl_text_editor
     main.c
     lv_port_indev_picocalc_kb.c
     lv_port_disp_picocalc_ILI9488.c
 )
 
-target_compile_options(pico_lvgl_display_demo PRIVATE -DPICOMITE
+target_compile_options(picocalc_lvgl_text_editor PRIVATE -DPICOMITE
 										-DPICO_HEAP_SIZE=0x1000 
 										-DGUICONTROLS
 										-DPICO_CORE0_STACK_SIZE=0x1000
 										)
 
-target_compile_definitions(pico_lvgl_display_demo PRIVATE LV_USE_DEMO_WIDGETS=1)
+target_compile_definitions(picocalc_lvgl_text_editor PRIVATE LV_USE_DEMO_WIDGETS=1)
 
-target_include_directories(pico_lvgl_display_demo PRIVATE
+target_include_directories(picocalc_lvgl_text_editor PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}
     ${CMAKE_CURRENT_LIST_DIR}/lib/lvgl/lvgl
     ${CMAKE_CURRENT_LIST_DIR}/lib/lvgl/lvgl/src
@@ -47,7 +47,7 @@ target_include_directories(pico_lvgl_display_demo PRIVATE
 )
 
 
-target_link_libraries(pico_lvgl_display_demo
+target_link_libraries(picocalc_lvgl_text_editor
   pico_stdlib
   hardware_flash
   hardware_irq
@@ -65,6 +65,6 @@ target_link_libraries(pico_lvgl_display_demo
   lvgl_demos
 )
 
-pico_enable_stdio_usb(pico_lvgl_display_demo 0)
-pico_enable_stdio_uart(pico_lvgl_display_demo 1)
-pico_add_extra_outputs(pico_lvgl_display_demo)
+pico_enable_stdio_usb(picocalc_lvgl_text_editor 0)
+pico_enable_stdio_uart(picocalc_lvgl_text_editor 1)
+pico_add_extra_outputs(picocalc_lvgl_text_editor)
