@@ -1,6 +1,6 @@
 # PicoCalc LVGL Text Editor
 
-Working towards a text editor that can save to SD card. Maybe basic MD support in the future, But first is saving filenames, copy and paste using F1-F8
+Working towards a text editor that can save to SD card. Maybe basic MD support in the future, But first is saving filenames, copy and paste using F1-F10
 
 
 ### Tasks
