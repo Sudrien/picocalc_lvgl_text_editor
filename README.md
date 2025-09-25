@@ -6,6 +6,7 @@ Working towards a text editor that can save to SD card. Maybe basic MD support i
 ### Tasks
 #### Completed
 - [x] Fix keyboard from original demo (arrow keys, not next and prev)
+- [ ] screen layout (get textarea to have no border formatting)
 - [ ] Fix keyboard "0" codes (interpreted as right arrow)
 - [ ] Nano/Wordstar style F key hints
 - [ ] F1-F5 are cut copy paste select mode stuff
