@@ -5,12 +5,14 @@ Working towards a text editor that can save to SD card. Maybe basic MD support i
 
 ### Tasks
 #### Completed
-- [] Fix keyboard from original demo (arrow keys, not next and prev)
-- [] Nano/Wordstar style F key hints
-- [] F1-F5 are cut copy paste select mode stuff
-- [] F6-F10 are new save ? ?
-- [] Shift button changes key hints
-- [] Support for both Pico 1 and Pico 2 builds.
+- [x] Fix keyboard from original demo (arrow keys, not next and prev)
+- [ ] Fix keyboard "0" codes (interpreted as right arrow)
+- [ ] Nano/Wordstar style F key hints
+- [ ] F1-F5 are cut copy paste select mode stuff
+- [ ] F6-F10 are new save ? ?
+- [ ] Shift button changes key hints
+- [ ] Save and load txt files from sd card
+- [ ] Support for both Pico 1 and Pico 2 builds.
 
 
 ## Build Instructions
