@@ -37,13 +37,13 @@ target_compile_options(picocalc_lvgl_text_editor PRIVATE -DPICOMITE
 										-DPICO_CORE0_STACK_SIZE=0x1000
 										)
 
-target_compile_definitions(picocalc_lvgl_text_editor PRIVATE LV_USE_DEMO_WIDGETS=1)
+# target_compile_definitions(picocalc_lvgl_text_editor PRIVATE LV_USE_DEMO_WIDGETS=1)
 
 target_include_directories(picocalc_lvgl_text_editor PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}
     ${CMAKE_CURRENT_LIST_DIR}/lib/lvgl/lvgl
     ${CMAKE_CURRENT_LIST_DIR}/lib/lvgl/lvgl/src
-    ${CMAKE_CURRENT_LIST_DIR}/lib/lvgl/lvgl/demos
+#    ${CMAKE_CURRENT_LIST_DIR}/lib/lvgl/lvgl/demos
 )
 
 
@@ -62,7 +62,7 @@ target_link_libraries(picocalc_lvgl_text_editor
   i2ckbd
   lcdspi
   lvgl
-  lvgl_demos
+#  lvgl_demos
 )
 
 pico_enable_stdio_usb(picocalc_lvgl_text_editor 0)

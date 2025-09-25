@@ -18,11 +18,11 @@
 #include "lvgl/lvgl.h"
 #include "lv_port_indev_picocalc_kb.h"
 #include "lv_port_disp_picocalc_ILI9488.h"
-#include "lvgl/demos/lv_demos.h"
+/*#include "lvgl/demos/lv_demos.h"*/
 
 
 #define ILI9488 1
-#define USE_DEFAULT_DEMO 0
+/*#define USE_DEFAULT_DEMO 0*/
 
 #define BYTE_PER_PIXEL (LV_COLOR_FORMAT_GET_SIZE(LV_COLOR_FORMAT_RGB565)) /*will be 2 for RGB565 */
 
@@ -57,12 +57,6 @@ int main()
     // Initialize the keyboard input device (implementation in lv_port_indev_kbd.c)
     lv_port_indev_init();
 
-
-
-#ifdef USE_DEFAULT_DEMO
-    // Initialize and run LVGL demo
-    lv_demo_widgets(); // Replace with the correct demo function if needed
-#else
     // Create a screen
     lv_obj_t *screen = lv_obj_create(NULL);
 
@@ -80,7 +74,6 @@ int main()
 
     // Load the screen
     lv_scr_load(screen);
-#endif
 
     // Main loop
     while (1)
