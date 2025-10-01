@@ -224,6 +224,9 @@ static void keypad_read(lv_indev_t * indev_drv, lv_indev_data_t * data)
                 act_key = 0;
                 break;
             case 0xA2: case 0xA3: // RIGHT/LEFT SHIFT
+
+//                lv_buttonmatrix_set_map(f_keys, f_key_shift_labels);
+                return;
                 break;
 
             default:
@@ -236,6 +239,14 @@ static void keypad_read(lv_indev_t * indev_drv, lv_indev_data_t * data)
         last_key = act_key;
         pending_release = true;
     } else {
+        //how to detect shift is released?
+        switch (r) {
+            case 0xA2: case 0xA3: // RIGHT/LEFT SHIFT
+//                lv_buttonmatrix_set_map(f_keys, f_key_labels);
+                return;
+                break;
+            }
+
         data->state = LV_INDEV_STATE_RELEASED;
         data->key = 0;
     }

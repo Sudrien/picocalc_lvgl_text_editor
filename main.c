@@ -71,13 +71,23 @@ int main()
     lv_obj_t *input = lv_textarea_create(screen);
     lv_obj_set_width(input, 320);
     lv_obj_set_height(input, 260);
-    lv_obj_align(input, LV_ALIGN_TOP_LEFT, 0, 20);
-//    lv_obj_set_style_border_width(input, 0, LV_STATE_DEFAULT|LV_STATE_FOCUSED|LV_STATE_FOCUS_KEY|LV_STATE_EDITED);
-//    lv_obj_set_style_outline_width(input, 0, LV_STATE_DEFAULT|LV_STATE_FOCUSED|LV_STATE_FOCUS_KEY|LV_STATE_EDITED);
-//    lv_obj_set_style_shadow_width(input, 0, LV_STATE_DEFAULT|LV_STATE_FOCUSED|LV_STATE_FOCUS_KEY|LV_STATE_EDITED);
-    lv_obj_set_style_radius(input, 0, 0); 
-    lv_obj_set_style_bg_color(input, lv_color_white(), 0);
-    lv_obj_set_style_bg_opa(input, LV_OPA_COVER, 0);
+    lv_obj_align(input, LV_ALIGN_TOP_LEFT, 0, 30);
+//    lv_obj_set_width(input, 300);
+//    lv_obj_set_height(input, 240);
+//    lv_obj_align(input, LV_ALIGN_TOP_LEFT, 10, 30);
+    lv_obj_set_style_border_width(input, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_outline_width(input, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(input, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_outline_width(input, 0, LV_PART_MAIN | LV_STATE_FOCUSED);
+    lv_obj_set_style_border_width(input, 0, LV_PART_MAIN | LV_STATE_FOCUSED);
+    lv_obj_set_style_shadow_width(input, 0, LV_PART_MAIN | LV_STATE_FOCUSED);
+    lv_obj_set_style_outline_width(input, 0, LV_PART_MAIN | LV_STATE_FOCUS_KEY);
+    lv_obj_set_style_border_width(input, 0, LV_PART_MAIN | LV_STATE_FOCUS_KEY);
+    lv_obj_set_style_shadow_width(input, 0, LV_PART_MAIN | LV_STATE_FOCUS_KEY);
+    lv_obj_set_style_outline_width(input, 0, LV_PART_MAIN | LV_STATE_EDITED);
+    lv_obj_set_style_border_width(input, 0, LV_PART_MAIN | LV_STATE_EDITED);
+    lv_obj_set_style_shadow_width(input, 0, LV_PART_MAIN | LV_STATE_EDITED);
+    lv_obj_set_style_radius(input, 0, LV_PART_MAIN | LV_STATE_DEFAULT); 
 
     lv_obj_set_style_anim_time(input, 1000, LV_PART_CURSOR|LV_STATE_FOCUSED);
     // Textarea event handler
@@ -85,13 +95,23 @@ int main()
 
 
     // Button labels
-    const char* f_key_labels[] = {"S", "F1", "F2", "F3", "F4", "F5", ""};
+    const char* f_key_labels[] = {"\nShift", "F1\n[Sel", "F2\nSel]", "F3\nCut", "F4\nCopy", "F5\nPaste", ""};
+    const char* f_key_shift_labels[] = {"\nShift", "F6\nSave", "F7\nNew", "F8\nOpen", "F9\nRename", "F10\nDelete", ""};
 
     lv_obj_t *f_keys = lv_buttonmatrix_create(screen);
     lv_buttonmatrix_set_map(f_keys, f_key_labels);
-    lv_obj_set_size(f_keys, 320, 40);
+    lv_obj_set_size(f_keys, 320, 30);
     lv_obj_clear_flag(f_keys, LV_OBJ_FLAG_SCROLLABLE);
-    lv_obj_align(f_keys, LV_ALIGN_TOP_LEFT, 0, 280);
+    lv_obj_align(f_keys, LV_ALIGN_TOP_LEFT, 0, 290);
+    lv_obj_set_style_border_width(f_keys, 0, LV_PART_MAIN | LV_STATE_DEFAULT );
+    lv_obj_set_style_outline_width(f_keys, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(f_keys, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(f_keys, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_pad_all(f_keys, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(f_keys, LV_TEXT_ALIGN_CENTER, LV_PART_ITEMS);
+
+//lv_buttonmatrix_set_map(f_keys, f_key_shift_labels);
+//lv_buttonmatrix_set_map(f_keys, f_key_labels);
 
    // Load the screen
    lv_scr_load(screen);
